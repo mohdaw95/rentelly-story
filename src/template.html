@@ -79,11 +79,6 @@
   .shots figure{margin:0}
   .shots figcaption{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:12px}
 
-  .mzshot{max-width:420px;margin-inline:auto;width:100%}
-  .mzshot img{display:block;width:100%;height:auto}
-  #mzad .plats b{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-  #mzad .hero .three{grid-template-columns:1fr 1fr}
-  @media(max-width:760px){#mzad .hero .three{grid-template-columns:1fr}}
 
   .gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
   @media(max-width:760px){.gains{grid-template-columns:1fr}}
@@ -141,8 +136,7 @@
 
   /* platforms + market */
   .plats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
-  #mzad .plats{grid-template-columns:repeat(4,1fr)}
-  @media(max-width:760px){.plats,#mzad .plats{grid-template-columns:1fr 1fr}}
+  @media(max-width:760px){.plats{grid-template-columns:1fr 1fr}}
   .plats div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card)}
   .plats b{display:block;font-weight:800;font-size:17px}
   .plats span{font-size:13px;color:var(--muted)}
@@ -208,7 +202,7 @@
     <a class="mark" href="#story" aria-label="Rentelly">{{LOGO_SVG}}</a>
     <div class="spacer"></div>
     <div class="links" id="links">
-      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#trust">Trust</a><a href="#mzad">Mzad Qatar</a><a href="#roadmap">Roadmap</a><a href="#ask">Let's talk</a>
+      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#trust">Trust</a><a href="#roadmap">Roadmap</a><a href="#ask">Let's talk</a>
     </div>
     <a class="cta ghost" href="https://rentelly.com" target="_blank" rel="noopener">rentelly.com</a>
     <a class="cta" href="#ask">Talk to us</a>
@@ -338,35 +332,6 @@
   </div>
 </section>
 
-<!-- mzad qatar -->
-<section id="mzad" class="tint">
-  <div class="wrap">
-    <div class="hero reveal">
-      <div>
-        <span class="eyebrow">Part of the Mzad Qatar group</span>
-        <h2>Built by the team behind Qatar's biggest marketplace.</h2>
-        <p class="lead">Rentelly is developed by Ebdaa Digital Technology, the Doha company behind Mzad Qatar, the country's first and largest classifieds and auctions platform since 2012. That means proven payments, verification and app infrastructure from day one, and direct reach into the Gulf travelers who book these homes.</p>
-        <div class="three" style="margin-top:28px">
-          <div><small>Established 2012</small><p>Qatar's first comprehensive online classifieds platform, spanning vehicles, real estate, electronics and more.</p></div>
-          <div><small>A family of platforms</small><p>Mzad Qatar, Syaanh home services, Rentcarz car rental and Fahsy inspections share one technology and payments stack with Rentelly.</p></div>
-        </div>
-      </div>
-      <div class="mzshot"><img src="{{IMG_MZAD}}" alt="Mzad Qatar app: home and bidding screens on iPhone"></div>
-    </div>
-    <div class="plats reveal">
-      <div><b>1.85 M</b><span>iOS and Android downloads</span></div>
-      <div><b>+104 K</b><span>ads a month</span></div>
-      <div><b>+1.42 M</b><span>active users</span></div>
-      <div><b>269 M</b><span>ad views a month</span></div>
-    </div>
-    <div class="gains reveal">
-      <div><b>Demand</b><small>Gulf travelers, already in the app</small><p>Mzad's 1.42 million active users are the exact audience that books holiday homes abroad. Rentelly reaches them without buying a single install.</p></div>
-      <div><b>Stack</b><small>Payments and verification</small><p>Secure payments, identity verification and native iOS and Android apps are inherited, not rebuilt. Rentelly spends on supply and trust instead.</p></div>
-      <div><b>Playbook</b><small>Marketplaces are the family business</small><p>Fourteen years of running two-sided marketplaces in the region: pricing, moderation, support, fraud. Rentelly starts with the lessons paid for.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- platforms -->
 <section>
   <div class="wrap reveal">
@@ -390,7 +355,7 @@
     <div class="road">
       <div><small>Chapter 1 · now</small><b>Verified supply</b><p>700+ checked listings across eight destinations, five property types, three platforms. The marketplace is live and booking.</p><span class="tag">The foundation</span></div>
       <div><small>Chapter 2</small><b>Protected bookings at scale</b><p>Online payment on every reservation, host calendars and pricing tools, ratings after every stay. Trust becomes the default, not the option.</p><span class="tag">The repeat engine</span></div>
-      <div><small>Chapter 3</small><b>The Gulf demand engine</b><p>Rentelly inside the Mzad Qatar family of apps, Arabic-first campaigns across the Gulf, and partnerships with airlines and travel agents who already sell the destination.</p><span class="tag">The growth chapter</span></div>
+      <div><small>Chapter 3</small><b>The Gulf demand engine</b><p>Arabic-first campaigns across the Gulf, and partnerships with airlines and travel agents who already sell the destination.</p><span class="tag">The growth chapter</span></div>
       <div><small>Chapter 4</small><b>New markets</b><p>The same product, a new destination switch and local payment rails. The region's beach and city destinations share the same informal rental problem, and the same fix.</p><span class="tag">The scale chapter</span></div>
     </div>
   </div>
@@ -401,7 +366,7 @@
   <div class="wrap reveal">
     <span class="eyebrow">Web Summit · Lisbon</span>
     <h2>We came to Lisbon for three conversations.</h2>
-    <p class="lead">Rentelly is live, booking, and backed by a group that already runs marketplaces at scale. Here is who we would like to meet this week.</p>
+    <p class="lead">Rentelly is live and booking. Here is who we would like to meet this week.</p>
     <div class="ask">
       <div><small>Investors</small><b>Seed partners for the Gulf chapter</b><span>Capital to fund protected bookings at scale and the first Gulf demand campaigns. Terms available in person.</span></div>
       <div><small>Partners</small><b>Travel, payments and hospitality</b><span>Airlines, OTAs, payment providers and property managers who want verified short-stay inventory in a fast-growing market.</span></div>
@@ -422,8 +387,7 @@
     <p class="lead">That is the whole idea. Verified homes, clear prices, a booking someone stands behind. Built in one market, designed for the region.</p>
     <div class="contact">
       <div><span>Company</span><b>Rentelly · rentelly.com</b></div>
-      <div><span>Group</span><b>Ebdaa Digital Technology · Mzad Qatar</b></div>
-      <div><span>Offices</span><b>Doha, Qatar · New Cairo, Egypt</b></div>
+      <div><span>Office</span><b>New Cairo, Egypt</b></div>
       <div><span>Contact</span><b>Mohammed Dawoud</b></div>
       <div><span>Email</span><b>{{CONTACT_EMAIL}}</b></div>
       <div><span>Rentelly line</span><b dir="ltr">+20 102 680 8800</b></div>
