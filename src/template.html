@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light only">
 <meta name="robots" content="noindex">
 <title>Rentelly Investor Story</title>
-<meta name="description" content="Rentelly: trusted short-term booking for villas, chalets, apartments, camps and farm houses. Built in Egypt, backed by Mzad Qatar, ready to scale.">
+<meta name="description" content="Rentelly: trusted short-term booking for villas, chalets, apartments, camps and farm houses. Built in Egypt, ready to scale.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 39 41'%3E%3Cpath d='M38.3 40.7c-.8 0-1.4.1-1.9.1H27C18.9 40.8 10.8 40.9 2.7 41c-1.5 0-2-.4-2-1.9.1-12.4.1-24.8 0-37.3C.7.5 1.1 0 2.6 0c6.2.1 12.5 0 18.7 0 5.6 0 10 2.1 12.9 7.1s1.6 12.5-3.1 16.2c-1.9 1.5-1.9 1.5-.6 3.5l7.3 12.7c.2.4.3.8.5 1.2z' fill='%23EF839D'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,16 +164,9 @@
   .road p{font-size:14px;color:var(--muted)}
   .road .tag{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
-  /* ask */
-  .ask{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
-  @media(max-width:760px){.ask{grid-template-columns:1fr}}
-  .ask div{background:color-mix(in srgb,var(--on-green) 10%,transparent);border:1px solid color-mix(in srgb,var(--on-green) 28%,transparent);border-radius:16px;padding:20px}
-  .ask small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
-  .ask b{display:block;font-size:clamp(22px,2.6vw,28px);font-weight:800;letter-spacing:-.02em;margin:6px 0 8px;color:var(--on-green)}
-  .ask span{font-size:14px}
 
   /* closing */
-  .close .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
   .contact{display:flex;flex-wrap:wrap;gap:28px;margin-top:30px}
   .contact div span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
   .contact div b{font-weight:800;font-size:17px;user-select:all}
@@ -202,10 +195,10 @@
     <a class="mark" href="#story" aria-label="Rentelly">{{LOGO_SVG}}</a>
     <div class="spacer"></div>
     <div class="links" id="links">
-      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#trust">Trust</a><a href="#roadmap">Roadmap</a><a href="#ask">Let's talk</a>
+      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#trust">Trust</a><a href="#roadmap">Roadmap</a><a href="#contact">Contact</a>
     </div>
     <a class="cta ghost" href="https://rentelly.com" target="_blank" rel="noopener">rentelly.com</a>
-    <a class="cta" href="#ask">Talk to us</a>
+    <a class="cta" href="#contact">Talk to us</a>
   </div>
 </nav>
 
@@ -361,26 +354,8 @@
   </div>
 </section>
 
-<!-- ask -->
-<section id="ask" class="green-bg">
-  <div class="wrap reveal">
-    <span class="eyebrow">Web Summit · Lisbon</span>
-    <h2>We came to Lisbon for three conversations.</h2>
-    <p class="lead">Rentelly is live and booking. Here is who we would like to meet this week.</p>
-    <div class="ask">
-      <div><small>Investors</small><b>Seed partners for the Gulf chapter</b><span>Capital to fund protected bookings at scale and the first Gulf demand campaigns. Terms available in person.</span></div>
-      <div><small>Partners</small><b>Travel, payments and hospitality</b><span>Airlines, OTAs, payment providers and property managers who want verified short-stay inventory in a fast-growing market.</span></div>
-      <div><small>Operators</small><b>People who have scaled a rental marketplace</b><span>Advisors and operators who have done this in another market and want to help do it again.</span></div>
-    </div>
-    <div class="close acts">
-      <a class="cta pink" href="mailto:{{CONTACT_EMAIL}}?subject=Rentelly%20at%20Web%20Summit">Email Mohammed</a>
-      <a class="cta ghost" style="color:#fff;border-color:rgba(255,255,255,.5)" href="https://rentelly.com" target="_blank" rel="noopener">See the live product</a>
-    </div>
-  </div>
-</section>
-
 <!-- closing -->
-<section class="tint close">
+<section id="contact" class="tint close">
   <div class="wrap reveal">
     <span class="eyebrow">Next chapter</span>
     <h2>Every holiday home should be as easy to book as a hotel.</h2>
@@ -390,7 +365,7 @@
       <div><span>Office</span><b>New Cairo, Egypt</b></div>
       <div><span>Contact</span><b>Mohammed Dawoud</b></div>
       <div><span>Email</span><b>{{CONTACT_EMAIL}}</b></div>
-      <div><span>Rentelly line</span><b dir="ltr">+20 102 680 8800</b></div>
+      <div><span>Mobile</span><b dir="ltr">+974 3009 3888</b></div>
     </div>
   </div>
 </section>
