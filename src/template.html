@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="robots" content="noindex">
+<title>Rentelly Investor Story</title>
+<meta name="description" content="Rentelly: trusted short-term booking for villas, chalets, apartments, camps and farm houses. Built in Egypt, backed by Mzad Qatar, ready to scale.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 39 41'%3E%3Cpath d='M38.3 40.7c-.8 0-1.4.1-1.9.1H27C18.9 40.8 10.8 40.9 2.7 41c-1.5 0-2-.4-2-1.9.1-12.4.1-24.8 0-37.3C.7.5 1.1 0 2.6 0c6.2.1 12.5 0 18.7 0 5.6 0 10 2.1 12.9 7.1s1.6 12.5-3.1 16.2c-1.9 1.5-1.9 1.5-.6 3.5l7.3 12.7c.2.4.3.8.5 1.2z' fill='%23EF839D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  /* Layout: one long scroll with a sticky section nav. Palette drawn from rentelly.com: deep green header, teal buttons, the pink R mark. */
+  :root{
+    --green:#0D3934; --green-dark:#082723; --teal:#21675F; --teal-light:#2E8A7F;
+    --pink:#EF839D; --pink-soft:#FBE3EA;
+    --chip:#E6F0EE; --bg:#FFFFFF; --card:#FFFFFF; --subtle:#F4F7F6;
+    --ink:#0D1F1C; --muted:#5B6B68; --line:#DFE7E5; --success:#2E7D5B;
+    --on-green:#FFFFFF; --mint:#BFE3DB;
+    --shadow:0 2px 8px rgba(13,57,52,.05),0 12px 30px rgba(13,57,52,.07);
+    --display:"Manrope",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+    padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light only
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;line-height:1.05;margin:0;text-wrap:balance}
+  h1{font-size:clamp(40px,7vw,84px);font-weight:800}
+  h2{font-size:clamp(30px,4.6vw,56px);font-weight:800}
+  h3{font-size:clamp(18px,2vw,22px);font-weight:800;letter-spacing:-.01em}
+  p{margin:0;max-width:62ch}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:14px;display:block}
+  .lead{font-size:clamp(17px,1.9vw,22px);color:var(--muted);max-width:48ch;margin-top:18px}
+  a{color:var(--teal)}
+  :focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+
+  /* nav */
+  .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav .in{display:flex;align-items:center;gap:14px;padding:12px 20px;max-width:1180px;margin:0 auto}
+  .nav .spacer{flex:1;min-width:0}
+  @media(max-width:900px){.links{display:none}.nav .in{gap:10px}.cta{padding:9px 14px;font-size:13px}}
+  .mark{display:flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap}
+  .mark svg{flex:none;height:26px;width:auto}
+  .links{display:flex;gap:4px;overflow-x:auto;min-width:0;scrollbar-width:none}
+  .links::-webkit-scrollbar{display:none}
+  .links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px;padding:8px 12px;border-radius:999px;white-space:nowrap}
+  .links a:hover,.links a.on{color:var(--green);background:var(--chip)}
+  .cta{background:var(--teal);color:var(--on-green);border:0;border-radius:999px;padding:11px 18px;font:inherit;font-weight:800;font-size:14px;cursor:pointer;text-decoration:none;white-space:nowrap}
+  .cta:hover{background:var(--green)}
+  .cta.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+  .cta.ghost:hover{background:var(--chip)}
+  .cta.pink{background:var(--pink);color:var(--green-dark)}
+  .cta.pink:hover{background:#F39DB2}
+
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+  section{padding-block:clamp(56px,9vw,120px);border-top:1px solid var(--line)}
+  section:first-of-type{border-top:0}
+  .tint{background:var(--subtle)}
+  .green-bg{background:var(--green);color:var(--on-green)}
+  .green-bg .eyebrow{color:var(--pink)}
+  .green-bg .lead,.green-bg p{color:color-mix(in srgb,var(--on-green) 82%,transparent)}
+  .green-bg h2{color:var(--on-green)}
+  .green-bg a{color:var(--mint)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center}
+  @media(max-width:860px){.hero{grid-template-columns:1fr}}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);min-width:130px}
+  .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  .shot{max-width:320px;margin-inline:auto;width:100%}
+  .shot img{display:block;width:100%;height:auto;border-radius:44px;border:10px solid #111;box-shadow:0 0 0 2px #3a3a3a,var(--shadow)}
+  .shots{display:grid;grid-template-columns:1fr;gap:28px;margin-top:40px;max-width:340px;margin-inline:auto}
+  .shots figure{margin:0}
+  .shots figcaption{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+  .mzshot{max-width:420px;margin-inline:auto;width:100%}
+  .mzshot img{display:block;width:100%;height:auto}
+  #mzad .plats b{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  #mzad .hero .three{grid-template-columns:1fr 1fr}
+  @media(max-width:760px){#mzad .hero .three{grid-template-columns:1fr}}
+
+  .gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+  @media(max-width:760px){.gains{grid-template-columns:1fr}}
+  .gains div{background:var(--green);color:var(--on-green);border-radius:18px;padding:26px 24px;display:grid;gap:6px;align-content:start}
+  .gains b{font-size:clamp(34px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .gains small{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);font-weight:500}
+  .gains p{font-size:17px;line-height:1.5;color:var(--on-green);opacity:.92;margin-top:6px}
+
+  /* problem */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .hero .three{grid-template-columns:1fr;gap:14px;margin-top:28px}
+  @media(max-width:760px){.three{grid-template-columns:1fr}}
+  .three div{border-top:2px solid var(--pink);padding-top:16px}
+  .three small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+  .three p{margin-top:8px;color:var(--muted);font-size:15.5px}
+
+  /* idea */
+  .trustline{margin-top:34px;max-width:560px;width:100%;height:auto}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;counter-reset:s}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.steps{grid-template-columns:1fr}}
+  .steps div{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card)}
+  .steps div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--teal);color:var(--on-green);font-weight:800;font-size:13px;margin-bottom:10px}
+  .steps b{display:block;font-weight:800}
+  .steps span{font-size:14px;color:var(--muted)}
+
+  /* model */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+  @media(max-width:760px){.duo{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .panel h3{margin-bottom:8px}
+  .panel p{color:var(--muted);font-size:15px}
+  .panel .free{color:var(--success);font-weight:800;font-size:34px;letter-spacing:-.02em}
+  .pill{display:inline-block;background:var(--chip);color:var(--teal);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800}
+  .revcalc{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}
+  @media(max-width:760px){.revcalc{grid-template-columns:1fr}}
+  .revcalc .out b{font-size:clamp(34px,5vw,56px);font-weight:800;letter-spacing:-.03em;color:var(--teal);font-variant-numeric:tabular-nums;display:block;line-height:1}
+  .revcalc .out span{font-size:13px;color:var(--muted)}
+  .cash{margin-top:14px;display:grid;gap:8px}
+  .cash label{font-weight:800;font-size:14px;display:flex;justify-content:space-between}
+  .cash label output{color:var(--teal);font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--teal)}
+  .note{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+  /* trust rows */
+  .rows{margin-top:36px;border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:760px){.row{grid-template-columns:1fr;gap:6px}}
+  .row p{color:var(--muted);font-size:15.5px}
+  .green-bg .row,.green-bg .rows{border-color:color-mix(in srgb,var(--on-green) 25%,transparent)}
+  .green-bg .row p,.green-bg .row h3{color:var(--on-green)}
+  .green-bg .row p{opacity:.88}
+
+  /* platforms + market */
+  .plats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+  #mzad .plats{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.plats,#mzad .plats{grid-template-columns:1fr 1fr}}
+  .plats div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card)}
+  .plats b{display:block;font-weight:800;font-size:17px}
+  .plats span{font-size:13px;color:var(--muted)}
+  .market{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+  @media(max-width:760px){.market{grid-template-columns:1fr}}
+  .market div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .market small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+  .market b{display:block;font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.02em;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+  .market span{font-size:13.5px;color:var(--muted)}
+  .src{font-size:12px;color:var(--muted);margin-top:16px;max-width:none}
+  .src a{color:var(--muted)}
+
+  /* destinations strip */
+  .dest{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .dest span{background:var(--chip);color:var(--green);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px}
+  .dest span i{font-style:normal;color:var(--teal);font-family:var(--mono);font-size:11px;letter-spacing:.1em;margin-left:6px}
+
+  /* roadmap */
+  .road{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;position:relative}
+  @media(max-width:860px){.road{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.road{grid-template-columns:1fr}}
+  .road div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative}
+  .road small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+  .road b{display:block;font-size:18px;font-weight:800;margin:6px 0}
+  .road p{font-size:14px;color:var(--muted)}
+  .road .tag{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  /* ask */
+  .ask{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+  @media(max-width:760px){.ask{grid-template-columns:1fr}}
+  .ask div{background:color-mix(in srgb,var(--on-green) 10%,transparent);border:1px solid color-mix(in srgb,var(--on-green) 28%,transparent);border-radius:16px;padding:20px}
+  .ask small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
+  .ask b{display:block;font-size:clamp(22px,2.6vw,28px);font-weight:800;letter-spacing:-.02em;margin:6px 0 8px;color:var(--on-green)}
+  .ask span{font-size:14px}
+
+  /* closing */
+  .close .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .contact{display:flex;flex-wrap:wrap;gap:28px;margin-top:30px}
+  .contact div span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .contact div b{font-weight:800;font-size:17px;user-select:all}
+  footer{padding:28px 20px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+
+  .reveal{opacity:1;transform:none}
+  @media(prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+    .reveal > *{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in > *{opacity:1;transform:none}
+    .reveal.in > *:nth-child(1){transition-delay:.05s}.reveal.in > *:nth-child(2){transition-delay:.15s}.reveal.in > *:nth-child(3){transition-delay:.25s}.reveal.in > *:nth-child(4){transition-delay:.35s}.reveal.in > *:nth-child(5){transition-delay:.45s}.reveal.in > *:nth-child(6){transition-delay:.55s}
+    .three > div,.gains > div,.plats > div,.market > div,.road > div,.ask > div,.steps > div,.shots > figure,.dest > span{opacity:0;transform:translateY(22px) scale(.98);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+    .in .three > div,.in .gains > div,.in .plats > div,.in .market > div,.in .road > div,.in .ask > div,.in .steps > div,.in .shots > figure,.in .dest > span{opacity:1;transform:none}
+    .in > * > :nth-child(1){transition-delay:.15s}.in > * > :nth-child(2){transition-delay:.27s}.in > * > :nth-child(3){transition-delay:.39s}.in > * > :nth-child(4){transition-delay:.51s}.in > * > :nth-child(5){transition-delay:.63s}.in > * > :nth-child(6){transition-delay:.75s}
+    .shot.reveal,.mzshot{transform:translateY(40px) rotate(2deg)}
+    .shot.reveal.in,.in .mzshot{transform:none}
+    .shot img,.mzshot img,.shots img{will-change:transform;transition:transform .2s linear}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="in">
+    <a class="mark" href="#story" aria-label="Rentelly">{{LOGO_SVG}}</a>
+    <div class="spacer"></div>
+    <div class="links" id="links">
+      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#trust">Trust</a><a href="#mzad">Mzad Qatar</a><a href="#roadmap">Roadmap</a><a href="#ask">Let's talk</a>
+    </div>
+    <a class="cta ghost" href="https://rentelly.com" target="_blank" rel="noopener">rentelly.com</a>
+    <a class="cta" href="#ask">Talk to us</a>
+  </div>
+</nav>
+
+<main>
+<!-- hero -->
+<section id="story">
+  <div class="wrap hero">
+    <div class="reveal">
+      <span class="eyebrow">rentelly.com · short-term booking</span>
+      <h1>Short stays you can <em>trust.</em></h1>
+      <p class="lead">Rentelly is a short-term booking platform for villas, beach chalets, apartments, camps and farm houses. Every home is verified, every price is clear, and every booking has someone standing behind it.</p>
+      <div class="stats">
+        <div class="stat"><b>700+</b><span>verified listings</span></div>
+        <div class="stat"><b>5</b><span>property types</span></div>
+        <div class="stat"><b>3</b><span>iOS · Android · Web</span></div>
+      </div>
+    </div>
+    <div class="shot reveal"><img src="{{IMG_HOME}}" alt="Rentelly home screen on a phone: search by destination and dates, browse apartments and chalets"></div>
+  </div>
+</section>
+
+<!-- problem -->
+<section class="tint">
+  <div class="wrap hero">
+    <div class="reveal">
+      <span class="eyebrow">The problem</span>
+      <h2>Booking a holiday home still means trusting a stranger.</h2>
+      <p class="lead">In most of the region's beach and city destinations, short stays are arranged in chat groups and through brokers. A deposit goes out on a promise. Sometimes the home is not what the photos showed. Sometimes nobody answers.</p>
+      <div class="three">
+        <div><small>Informal supply</small><p>Owners rent through word of mouth, brokers and messaging groups. Availability is a phone call, and a deposit is a leap of faith.</p></div>
+        <div><small>Opaque pricing</small><p>Prices move with the season, the caller's accent and the broker's mood. Guests never know if they paid the right number.</p></div>
+        <div><small>No recourse</small><p>No verified identity, no booking record, no one to call when the key does not turn up. One bad stay and the guest never books again.</p></div>
+      </div>
+    </div>
+    <div class="shot reveal"><img src="{{IMG_LISTING}}" alt="A verified apartment listing on Rentelly: photos, bedrooms, price per night and a Reserve with Rentelly button"></div>
+  </div>
+</section>
+
+<!-- idea -->
+<section class="green-bg">
+  <div class="wrap reveal">
+    <span class="eyebrow">The idea</span>
+    <h2>Verified homes. Clear prices. A booking someone stands behind.</h2>
+    <p class="lead">Rentelly takes the informal rental market and gives it the three things it never had: a checked listing, a transparent nightly price, and a protected reservation. The home is still the owner's. The trust is ours.</p>
+    <svg class="trustline" viewBox="0 0 600 90" fill="none" aria-hidden="true"><path d="M40 45h160" stroke="#BFE3DB" stroke-width="4" stroke-linecap="round"/><circle cx="230" cy="45" r="14" stroke="#EF839D" stroke-width="4"/><path d="M223 45l5 5 9-10" stroke="#EF839D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M260 45h160" stroke="#BFE3DB" stroke-width="4" stroke-linecap="round"/><rect x="440" y="31" width="28" height="28" rx="6" stroke="#FFFFFF" stroke-width="4"/><path d="M490 45h70l-20-16M560 45l-20 16" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- market -->
+<section id="market">
+  <div class="wrap reveal">
+    <span class="eyebrow">Market · launch country</span>
+    <h2>We started in a record-breaking tourism market.</h2>
+    <p class="lead">Our first market welcomed its highest-ever number of international visitors in 2025, with a government target of 30 million a year by the end of the decade. Add a large domestic holiday habit on two coastlines, and short stays are one of the fastest-growing corners of travel.</p>
+    <div class="market">
+      <div><small>International visitors · 2025</small><b>19M</b><span>a record year, up 21% on 2024, four times the global growth rate</span></div>
+      <div><small>Tourism revenue · FY 2024/25</small><b>$16.7B</b><span>up 16% year on year, with 2026 expected to pass $20B</span></div>
+      <div><small>Government target</small><b>30M</b><span>visitors a year by 2030, with new coastal cities built to receive them</span></div>
+    </div>
+    <div class="dest">
+      <span>Ain Sokhna <i>beach chalets</i></span><span>Hurghada <i>villas</i></span><span>North Coast <i>summer stays</i></span><span>Cairo <i>city apartments</i></span><span>El Gouna <i>boutique</i></span><span>Marsa Alam <i>eco lodges</i></span><span>Alexandria <i>apartments</i></span><span>Fayoum &amp; Siwa <i>camps</i></span>
+    </div>
+    <p class="src">Sources: Ministry of Tourism and Antiquities, State Information Service (Jan 2026); Ahram Online on FY 2024/25 revenues.</p>
+  </div>
+</section>
+
+<!-- product -->
+<section id="product" class="tint">
+  <div class="wrap reveal">
+    <span class="eyebrow">How it works</span>
+    <h2>From search to a protected booking in four taps.</h2>
+    <p class="lead">Pick a destination and dates, choose a verified home, reserve. Arabic and English throughout, prices in local currency, and a WhatsApp line that answers.</p>
+    <div class="shots">
+      <figure class="shot"><img src="{{IMG_SEARCH}}" alt="Rentelly search results on a phone: chalets and apartments with photos, location and price per night"><figcaption>Find your stay · filters and sorting</figcaption></figure>
+    </div>
+    <div class="steps">
+      <div><b>Search</b><span>Destination, dates, property type. Chalets, villas, apartments, camps and farm houses in one place.</span></div>
+      <div><b>Choose a verified home</b><span>Photos, bedrooms, amenities and a clear nightly price. Every listing is checked before it goes live.</span></div>
+      <div><b>Reserve with Rentelly</b><span>A protected booking with a record on both sides. Or contact the host directly if you prefer.</span></div>
+      <div><b>Stay and rate</b><span>Support is a tap away during the stay. Ratings after checkout keep the best hosts on top.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- model -->
+<section id="model">
+  <div class="wrap reveal">
+    <span class="eyebrow">Business model</span>
+    <h2>Free to browse. We earn when a stay is booked.</h2>
+    <div class="duo">
+      <div class="panel"><div class="free">Free</div><h3>Everything up to the reservation</h3><p>Searching, browsing, saving favourites and contacting hosts cost the guest nothing. Listing is free for owners, so the marketplace fills.</p></div>
+      <div class="panel"><div class="free" style="color:var(--teal)">Per booking <span class="pill" style="vertical-align:middle;font-size:12px">Protected reservations</span></div><h3>When a guest reserves with Rentelly</h3><p>A service fee on each protected booking, paid for the verification, the record and the support that come with it. Premium placement and host tools come next, on top of the same inventory.</p></div>
+    </div>
+    <div class="revcalc">
+      <div>
+        <h3>Revenue follows protected bookings</h3>
+        <p style="color:var(--muted);font-size:15px;margin-top:6px">Drag the volume. Figures are illustrative, not a forecast.</p>
+        <div class="cash" style="margin-top:16px">
+          <label for="bookings">Protected bookings a month <output id="bookingsOut">1,000</output></label>
+          <input type="range" id="bookings" min="100" max="20000" step="100" value="1000">
+          <label for="value">Average booking value <output id="valueOut">$120</output></label>
+          <input type="range" id="value" min="40" max="400" step="10" value="120">
+          <label for="take">Service fee <output id="takeOut">12%</output></label>
+          <input type="range" id="take" min="5" max="20" step="1" value="12">
+        </div>
+      </div>
+      <div class="out"><b id="rev">$14,400</b><span>a month · <span id="revYear">$172,800</span> a year · illustrative only</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- trust -->
+<section id="trust" class="green-bg">
+  <div class="wrap reveal">
+    <span class="eyebrow">Why guests come back</span>
+    <h2>Trust is the product. Everything else is a feature.</h2>
+    <div class="rows">
+      <div class="row"><h3>Verified listings</h3><p>Every home is checked before it goes live. Owners are identified, photos match the property, and the listing says what the stay actually includes.</p></div>
+      <div class="row"><h3>Transparent pricing</h3><p>One nightly price in local currency, shown up front. No seasonal surprises, no different numbers for different callers.</p></div>
+      <div class="row"><h3>Protected booking</h3><p>Reserve with Rentelly and there is a record on both sides, a confirmation, and a team to call if something goes wrong.</p></div>
+      <div class="row"><h3>Bilingual, local support</h3><p>Arabic and English across the app and the web, with a support line that answers around the clock in the guest's own language.</p></div>
+      <div class="row"><h3>Hosts win too</h3><p>Free listing, a calendar instead of a phone that never stops ringing, and guests who arrive already trusting the booking.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- mzad qatar -->
+<section id="mzad" class="tint">
+  <div class="wrap">
+    <div class="hero reveal">
+      <div>
+        <span class="eyebrow">Part of the Mzad Qatar group</span>
+        <h2>Built by the team behind Qatar's biggest marketplace.</h2>
+        <p class="lead">Rentelly is developed by Ebdaa Digital Technology, the Doha company behind Mzad Qatar, the country's first and largest classifieds and auctions platform since 2012. That means proven payments, verification and app infrastructure from day one, and direct reach into the Gulf travelers who book these homes.</p>
+        <div class="three" style="margin-top:28px">
+          <div><small>Established 2012</small><p>Qatar's first comprehensive online classifieds platform, spanning vehicles, real estate, electronics and more.</p></div>
+          <div><small>A family of platforms</small><p>Mzad Qatar, Syaanh home services, Rentcarz car rental and Fahsy inspections share one technology and payments stack with Rentelly.</p></div>
+        </div>
+      </div>
+      <div class="mzshot"><img src="{{IMG_MZAD}}" alt="Mzad Qatar app: home and bidding screens on iPhone"></div>
+    </div>
+    <div class="plats reveal">
+      <div><b>1.85 M</b><span>iOS and Android downloads</span></div>
+      <div><b>+104 K</b><span>ads a month</span></div>
+      <div><b>+1.42 M</b><span>active users</span></div>
+      <div><b>269 M</b><span>ad views a month</span></div>
+    </div>
+    <div class="gains reveal">
+      <div><b>Demand</b><small>Gulf travelers, already in the app</small><p>Mzad's 1.42 million active users are the exact audience that books holiday homes abroad. Rentelly reaches them without buying a single install.</p></div>
+      <div><b>Stack</b><small>Payments and verification</small><p>Secure payments, identity verification and native iOS and Android apps are inherited, not rebuilt. Rentelly spends on supply and trust instead.</p></div>
+      <div><b>Playbook</b><small>Marketplaces are the family business</small><p>Fourteen years of running two-sided marketplaces in the region: pricing, moderation, support, fraud. Rentelly starts with the lessons paid for.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- platforms -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Where it runs</span>
+    <h2>Built once for everywhere guests are.</h2>
+    <div class="plats">
+      <div><b>iPhone</b><span>Native app on the App Store</span></div>
+      <div><b>Android</b><span>Native app on Google Play</span></div>
+      <div><b>Web</b><span>The full marketplace at rentelly.com</span></div>
+    </div>
+    <p class="lead" style="margin-top:28px">Arabic and English throughout, right-to-left done properly. Destinations and currencies are configuration, not code, so each new country is a switch rather than a rebuild.</p>
+  </div>
+</section>
+
+<!-- roadmap -->
+<section id="roadmap" class="tint">
+  <div class="wrap reveal">
+    <span class="eyebrow">Where the story goes</span>
+    <h2>One country first. The region next.</h2>
+    <p class="lead">Four chapters. Each one makes the last one worth more.</p>
+    <div class="road">
+      <div><small>Chapter 1 · now</small><b>Verified supply</b><p>700+ checked listings across eight destinations, five property types, three platforms. The marketplace is live and booking.</p><span class="tag">The foundation</span></div>
+      <div><small>Chapter 2</small><b>Protected bookings at scale</b><p>Online payment on every reservation, host calendars and pricing tools, ratings after every stay. Trust becomes the default, not the option.</p><span class="tag">The repeat engine</span></div>
+      <div><small>Chapter 3</small><b>The Gulf demand engine</b><p>Rentelly inside the Mzad Qatar family of apps, Arabic-first campaigns across the Gulf, and partnerships with airlines and travel agents who already sell the destination.</p><span class="tag">The growth chapter</span></div>
+      <div><small>Chapter 4</small><b>New markets</b><p>The same product, a new destination switch and local payment rails. The region's beach and city destinations share the same informal rental problem, and the same fix.</p><span class="tag">The scale chapter</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ask -->
+<section id="ask" class="green-bg">
+  <div class="wrap reveal">
+    <span class="eyebrow">Web Summit · Lisbon</span>
+    <h2>We came to Lisbon for three conversations.</h2>
+    <p class="lead">Rentelly is live, booking, and backed by a group that already runs marketplaces at scale. Here is who we would like to meet this week.</p>
+    <div class="ask">
+      <div><small>Investors</small><b>Seed partners for the Gulf chapter</b><span>Capital to fund protected bookings at scale and the first Gulf demand campaigns. Terms available in person.</span></div>
+      <div><small>Partners</small><b>Travel, payments and hospitality</b><span>Airlines, OTAs, payment providers and property managers who want verified short-stay inventory in a fast-growing market.</span></div>
+      <div><small>Operators</small><b>People who have scaled a rental marketplace</b><span>Advisors and operators who have done this in another market and want to help do it again.</span></div>
+    </div>
+    <div class="close acts">
+      <a class="cta pink" href="mailto:{{CONTACT_EMAIL}}?subject=Rentelly%20at%20Web%20Summit">Email Mohammed</a>
+      <a class="cta ghost" style="color:#fff;border-color:rgba(255,255,255,.5)" href="https://rentelly.com" target="_blank" rel="noopener">See the live product</a>
+    </div>
+  </div>
+</section>
+
+<!-- closing -->
+<section class="tint close">
+  <div class="wrap reveal">
+    <span class="eyebrow">Next chapter</span>
+    <h2>Every holiday home should be as easy to book as a hotel.</h2>
+    <p class="lead">That is the whole idea. Verified homes, clear prices, a booking someone stands behind. Built in one market, designed for the region.</p>
+    <div class="contact">
+      <div><span>Company</span><b>Rentelly · rentelly.com</b></div>
+      <div><span>Group</span><b>Ebdaa Digital Technology · Mzad Qatar</b></div>
+      <div><span>Offices</span><b>Doha, Qatar · New Cairo, Egypt</b></div>
+      <div><span>Contact</span><b>Mohammed Dawoud</b></div>
+      <div><span>Email</span><b>{{CONTACT_EMAIL}}</b></div>
+      <div><span>Rentelly line</span><b dir="ltr">+20 102 680 8800</b></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>Prepared by Rentelly for Web Summit Lisbon 2026. Market figures from public government sources; product figures from rentelly.com as of October 2026.</footer>
+
+<script>
+  // Reveal on scroll, from a visible resting state when motion is reduced.
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Parallax: phone mock-ups drift slower than the page.
+  const floaters = [...document.querySelectorAll('.shot img, .mzshot img, .shots img')];
+  let ticking = false;
+  const parallax = () => {
+    const vh = innerHeight;
+    floaters.forEach(el => { const r = el.getBoundingClientRect(); const mid = r.top + r.height / 2; const d = (mid - vh / 2) / vh; el.style.transform = 'translateY(' + (d * -28).toFixed(1) + 'px)'; });
+    ticking = false;
+  };
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(parallax); ticking = true; } }, { passive: true }); parallax();
+  }
+
+  // Numbers count up the first time they scroll into view.
+  const counters = [...document.querySelectorAll('.market b, .plats b, .stat b')].filter(b => /\d/.test(b.textContent));
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; cio.unobserve(e.target);
+    const el = e.target; const html = el.innerHTML; const m = el.textContent.match(/([^\d]*)([\d,.]+)(.*)/s); if (!m) return;
+    const target = parseFloat(m[2].replace(/,/g, '')); if (!isFinite(target)) return;
+    const decimals = (m[2].split('.')[1] || '').length; const t0 = performance.now(); const dur = 1200;
+    const textNode = [...el.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.textContent)); if (!textNode) return;
+    const tick = now => { const k = Math.min(1, (now - t0) / dur); const ease = 1 - Math.pow(1 - k, 3); const v = target * ease;
+      textNode.textContent = textNode.textContent.replace(/[\d,.]+/, v.toLocaleString('en', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }));
+      if (k < 1) requestAnimationFrame(tick); else el.innerHTML = html; };
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; requestAnimationFrame(tick);
+  }), { threshold: .6 });
+  counters.forEach(b => cio.observe(b));
+
+  // Sticky nav highlight.
+  const links = [...document.querySelectorAll('#links a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const nio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' });
+  secs.forEach(s => nio.observe(s));
+
+  // Revenue calculator.
+  const fmt = n => '$' + Math.round(Number(n)).toLocaleString('en');
+  const bookings = document.getElementById('bookings'), value = document.getElementById('value'), take = document.getElementById('take');
+  const calc = () => {
+    document.getElementById('bookingsOut').textContent = Number(bookings.value).toLocaleString('en');
+    document.getElementById('valueOut').textContent = fmt(value.value);
+    document.getElementById('takeOut').textContent = take.value + '%';
+    const m = bookings.value * value.value * take.value / 100;
+    document.getElementById('rev').textContent = fmt(m); document.getElementById('revYear').textContent = fmt(m * 12);
+  };
+  [bookings, value, take].forEach(i => i.addEventListener('input', calc)); calc();
+</script>
+</body>
+</html>
